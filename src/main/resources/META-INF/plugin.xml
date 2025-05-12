@@ -1,15 +1,14 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.rohit091193.codereviewhelper</id>
     <name>code-review-helper</name>
     <vendor>rohit091193</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.vcs</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
+    <idea-version since-build="242" until-build="252.*" />
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.rohit091193.codereviewhelper.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.rohit091193.codereviewhelper.startup.MyProjectActivity" />
+        <checkinHandlerFactory implementation="com.github.rohit091193.codereviewhelper.JavaFileCheckinHandler$Factory"/>
     </extensions>
 </idea-plugin>
