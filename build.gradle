@@ -15,8 +15,24 @@ dependencies {
 }
 
 intellij {
-    version = project.platformVersion
-    type = project.platformType
+    version = platformVersion
+    type = platformType
+    plugins = ['java']
+    pluginName = "code-review-helper"
+    updateSinceUntilBuild = true
+}
+
+patchPluginXml {
+    sinceBuild = pluginSinceBuild
+    untilBuild = pluginUntilBuild
+    version = pluginVersion
+    changeNotes = """
+      <ul>
+        <li>Switched to local AI (DeepSeek via Ollama)</li>
+        <li>Concise JSON-based code review format</li>
+        <li>Improved popup readability</li>
+      </ul>
+    """
 }
 
 tasks.named("buildSearchableOptions").configure {

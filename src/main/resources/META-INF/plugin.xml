@@ -1,12 +1,22 @@
 <idea-plugin>
     <id>com.github.rohit091193.codereviewhelper</id>
-    <name>code-review-helper</name>
-    <vendor>rohit091193</vendor>
+    <name>Code Review Helper</name>
+    <vendor email="your@email.com" url="https://github.com/rohit091193">Rohit Phutane</vendor>
+
+    <description><![CDATA[
+        A lightweight AI-based code reviewer plugin that analyzes Java files during commit and highlights issues with suggestions.
+    ]]></description>
+
+    <change-notes><![CDATA[
+        - Switched to local AI (DeepSeek via Ollama)<br>
+        - Concise JSON-based code review format<br>
+        - Improved popup readability and summary
+    ]]></change-notes>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.vcs</depends>
 
-    <idea-version since-build="242" until-build="252.*" />
+    <idea-version since-build="242" until-build="252.*"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <checkinHandlerFactory implementation="com.github.rohit091193.codereviewhelper.JavaFileCheckinHandler$Factory"/>
